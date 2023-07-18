@@ -1,0 +1,37 @@
+name = 'nick'
+s1 = str(1.1)
+s2 = str([1, 2, 3])
+
+print(f's1:{s1}, type:{type(s1)}')
+print(f's2:{s2}, type:{type(s2)}')
+
+print('s1:{},type:{}'.format(s1,type(s1)))
+print('s2:{},type:{}'.format(s2,type(s2)))
+
+# str 索引取值
+msg = 'hello nick'
+
+print(msg[6])
+print(f'索引为6: {msg[6]}')
+print(f'索引为-3: {msg[-3]}')
+
+msg = 'hello nick'
+#      0123456789 # 索引号
+
+# 前闭后开
+print(f'切片1到最后: {msg[1:]}')
+print(f'切片1到8: {msg[1:9]}')
+print(f'切片1到8，步长为2: {msg[1:9:2]}')
+
+# 步长为正从左到右，步长为负从右到左
+print(f'切片所有: {msg[:]}')
+print(f'反转所有: {msg[::-1]}')
+print(f'切片-5到-2: {msg[-5:-2:1]}')
+print(f'切片-2到-5: {msg[-2:-5:-1]}')
+
+# str移除空白strip()
+name = '&&&n ick'
+print(f"name.strip('&'): {name.strip('&')}")  # strip()默认为‘ ’，并且不修改原值，新创建空间
+print(f"name: {name}")
+
+print(f"'*-&n ick+'.strip('*-& +'): {'*-&n ick+'.strip('*-&+ ')}")
