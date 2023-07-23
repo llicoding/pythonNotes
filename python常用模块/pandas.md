@@ -37,4 +37,26 @@ arr = 10 * np.random.randn(6, 4)
 print(arr)
 
 df = pd.DataFrame(arr, index=dates, columns=['c1', 'c2', 'c3', 'c4'])
+
+print(df.index)
+print(df.columns)
+print(df.values)
+print(df.T)
+
+# ascending=True表示升序，ascending=False表示降序；inplace=True表示对原始DataFrame本身操作，因此不需要赋值操作，inplace=False相当于是对原始DataFrame的拷贝，之后的一些操作都是针对这个拷贝文件进行操作的，因此需要我们赋值给一个变量，保存操作后的结果。
+
+# 按行标签[c1, c2, c3, c4]从大到小排序
+df.sort_index(axis=0)
+
+# 按列标签[2019-01-01, 2019-01-02...]从大到小排序
+df.sort_index(axis=1)
+
+# 按c2列的值从大到小排序
+df.sort_values(by='c2')
+
+df['c2']
+df[['c2', 'c3']]
+# 通过自定义的行标签选择数据
+print(df.loc['2023-07-31':'2023-09-30'])
 ```
+![Alt text](/assets/10.png)
